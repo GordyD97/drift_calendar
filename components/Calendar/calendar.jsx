@@ -1,23 +1,9 @@
-import { useState } from "react";
-// import FullCalendar, { formatDate } from "@fullcalendar/react";
-// the format date import has been updated since use the below now.
-import { formatDate } from "@fullcalendar/core";
-import FullCalendar from "@fullcalendar/react";
+import { Calendar } from "@fullcalendar/core";
+import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
-
+import "../src/index.css";
 
 // imports are  INCORRECT THIS PAGE WAS COPIED FROM ANOTHER PERSONAL PROJECT PLEASE RECONFIGURE BEFORE RUNNING.
 
@@ -126,7 +112,9 @@ const Calendar = () => {
         </Box>
       </Box>
     </Box>
-    // stopped at @2:31:25
+    // stopped at @
+    
+    // calendar needs its own css file. turn calendar into its own folder for compact purposes. 
   );
 };
 
