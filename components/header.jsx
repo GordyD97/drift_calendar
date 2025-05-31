@@ -16,9 +16,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 
-const lightColor = "rgba(255, 255, 255, 0.7)";
+const lightColor = "rgba(255, 255, 255, 0.7)";3
 
-const header = (props) => {
+const Header = (props) => {
   return (
     <React.Fragment>
       <AppBar color="primary" position="sticky" elevation={0}>
@@ -27,8 +27,6 @@ const header = (props) => {
             <Grid sx={{ display: { sm: "none", xs: "block" } }} item>
               <IconButton
                 color="inherit"
-                aria-label="open drawer"
-                onClick={onDrawerToggle}
                 edge="start"
               >
                 <MenuIcon />
@@ -119,7 +117,6 @@ const header = (props) => {
 };
 
 Header.propTypes = {
-  onDrawerToggle: PropTypes.func.isRequired,
 };
 
-export default header
+export default Header

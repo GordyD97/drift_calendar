@@ -9,7 +9,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 
 // imports are  INCORRECT THIS PAGE WAS COPIED FROM ANOTHER PERSONAL PROJECT PLEASE RECONFIGURE BEFORE RUNNING.
 
-const Calendar = () => {
+const Calendar = () => { 
   return (
     <div>
       <FullCalendar
