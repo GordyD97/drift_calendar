@@ -25,10 +25,7 @@ const Header = (props) => {
         <Toolbar>
           <Grid container spacing={1} sx={{ alignItems: "center" }}>
             <Grid sx={{ display: { sm: "none", xs: "block" } }} item>
-              <IconButton
-                color="inherit"
-                edge="start"
-              >
+              <IconButton color="inherit" edge="start">
                 <MenuIcon />
               </IconButton>
             </Grid>
@@ -76,18 +73,29 @@ const Header = (props) => {
           <Grid container spacing={1} sx={{ alignItems: "center" }}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Authentication
+                Torunaments
               </Typography>
-            </Grid>
-            <Grid item>
               <Button
                 sx={{ borderColor: lightColor }}
                 variant="outlined"
                 color="inherit"
                 size="small"
               >
-                Web setup
+                Enter Torunament
               </Button>
+              
+            </Grid>
+            <Grid item>
+              {/* <Button
+                sx={{ borderColor: lightColor }}
+                variant="outlined"
+                color="inherit"
+                size="small"
+              >
+                Enter Torunament
+              </Button> */}
+{/* on this button that is blocked out it can be repurposed  */}
+
             </Grid>
             <Grid item>
               <Tooltip title="Help">
@@ -106,10 +114,10 @@ const Header = (props) => {
         sx={{ zIndex: 0 }}
       >
         <Tabs value={0} textColor="inherit">
-          <Tab label="Users" />
-          <Tab label="Sign-in method" />
-          <Tab label="Templates" />
-          <Tab label="Usage" />
+          <Tab label="Bracket" />
+          <Tab label="Standings" />
+          <Tab label="Rules" />
+          <Tab label="Future Events and comps" />
         </Tabs>
       </AppBar>
     </React.Fragment>
