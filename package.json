@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server.js",
-    "start:dev": "nodemon server.js --watch server.js --watch src"
+    "start": "node server/server.cjs",
+    "start:dev": "nodemon server/server.cjs --watch server/server.cjs --watch src"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -22,6 +22,8 @@
     "@fullcalendar/timegrid": "^6.1.15",
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-pro-sidebar": "^1.1.0",
