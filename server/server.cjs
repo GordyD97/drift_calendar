@@ -23,8 +23,25 @@ app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');  
     // res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-requested-With');
     // next();
-    console.log(`Request received: ${req.method} ${req.url}`);
+    console.log(`Request received: ${req.method} ${req.ip} - ${req.path}`);
     next();
+});
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html');
+// });
+
+app.get('/from', (req, res) => {
+    res.sendFile(__dirname + "/../src/index.html");
+});
+
+
+app.get('/api', (req, res) => {
+    res.json({ message: 'API is working!' });
 });
 
 
