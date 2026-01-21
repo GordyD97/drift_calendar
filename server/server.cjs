@@ -27,6 +27,12 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(__dirname + '/../src'));
+app.use(express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../build'));    
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
@@ -44,5 +50,9 @@ app.get('/api', (req, res) => {
     res.json({ message: 'API is working!' });
 });
 
+app.all('*', (req, res) => {
+    res.status(404).send('Not Found');
+});
+// app.use('/brackets', BracketsManager);   
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
