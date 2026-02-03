@@ -1,71 +1,135 @@
-import React from 'react';
-import {
-  Box,
-  Typography,
-  Button,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import React from "react";
+import Carousel from "react-material-ui-carousel";
+import { Box, Typography, Button } from "@mui/material";
+import rcdriftstock0 from '/src/assets/rcdriftstock0.jpg';
+import rcdriftstock1 from '../assets/rcdriftstock1.jpg';
+import rcdriftstock2 from '../assets/rcdriftstock2.jpg';
+import rcdriftstock3 from '../assets/rcdriftstock3.jpg';
 
 
-const jumbotron = () => {
+function Jumbotron() {
+  const items = [
+    {
+      title: "Stunning Beach View",
+      description: "rc cars.",
+      imageUrl: '/src/assets/rcdriftstock0.jpg', // Replace with your actual image URL
+    },
+    {
+      title: "rc drift",
+      description: "rc cars.",
+      imageUrl: '/src/assets/rcdriftstock1.jpg', // Replace with your actual image URL
+    },
+    {
+      title: "Stunning Beach View",
+      description: "rc cars.",
+      imageUrl: '/src/assets/rcdriftstock2.jpg', // Replace with your actual image URL
+    },
+    {
+      title: "Stunning Beach View",
+      description: "rc cars.",
+      imageUrl: '/src/assets/rcdriftstock3.jpg', // Replace with your actual image URL
+    },
+    // Add more items as needed
+  ];
+
   return (
-    
+    <Box
+      sx={{
+        height: "500px",
+        position: "relative",
+        overflow: "hidden", // Hide overflow for a clean look
+      }}
+    >
+      {/* Background overlay or gradient */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          height: "100vh",
-          backgroundImage: "url(https://via.placeholder.com/1920x1080)", // Replace with your high-res GIF URL
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          color: "#fff",
-          padding: theme.spacing(4),
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay
         }}
+      />
+
+      <Carousel
+        showDots={true}
+        next={
+          <Button variant="outlined" color="primary">
+            Next
+          </Button>
+        }
+        prev={
+          <Button variant="outlined" color="primary">
+            Prev
+          </Button>
+        }
+        autoPlay={false}
+        transitionMs={500}
+        animationMs={300}
       >
-        <Box
-          sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            padding: theme.spacing(4),
-            borderRadius: theme.shape.borderRadius,
-          }}
-        >
-          <Typography variant={isMobile ? "h3" : "h1"} gutterBottom>
-            Drift Reaperz, Drift Calendar
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Here you will find the next exciting events the Drift Reaperz drift
-            team will be holding at their home track.
-          </Typography>
+        {items.map((item, i) => (
           <Box
+            key={i}
             sx={{
+              height: "100%",
               display: "flex",
+              alignItems: "center",
               justifyContent: "center",
-              gap: theme.spacing(2),
-              mt: 2,
+              position: "relative",
             }}
           >
-            <Button variant="contained" color="primary" size="large">
-              Learn More
-            </Button>
-            <Button variant="outlined" color="secondary" size="large">
-              Sign Up
-            </Button>
+            {/* Image or other content */}
+            <Box
+              sx={{
+                width: "100%",
+                height: "80%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {item.imageUrl ? (
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title}
+                  width={500}
+                  height={300}
+                />
+              ) : (
+                // Placeholder if no image is available
+                <Typography variant="h6">No Image Available</Typography>
+              )}
+            </Box>
+
+            {/* Content overlay */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white", // Text color on top of image
+                padding: "2rem",
+              }}
+            >
+              <Typography variant="h5" sx={{ marginBottom: "1rem" }}>
+                {item.title}
+              </Typography>
+              <Typography variant="body1">{item.description}</Typography>
+            </Box>
           </Box>
-        </Box>
-      </Box>
-    
-
-    /* in the jumbo tron like the under aromur site put a large scale photo at the top and strech to screen withe media break points then 
-    
-    add a second div with large H1 text as attention grabber then small text right underneath use that oprtunity to put buttons below. 
-
-    center everytihg. 
-    */
+        ))}
+      </Carousel>
+    </Box>
   );
 }
 
-export default jumbotron
+export default Jumbotron;
+
+// next step is to include some place holder images for cars. 
